@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro Interactivo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.min.css" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="assets/css/all.min.css">
+	<link rel="stylesheet" href="assets/css/slick.css">
+	
+	<link rel="stylesheet" href="assets/css/intlTelInput.css">
+	<link rel="stylesheet" href="assets/css/style.css">
+	<link rel="stylesheet" href="assets/css/media-query.css">
+	<style>
+        body {
+            background-color: #f8f9fa;
+        }
+        
+        .card {
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            border: none;
+        }
+
+        .card-body {
+            padding: 2rem;
+        }
+
+        .btn-selection {
+            padding: 1rem 2rem;
+            font-size: 1.1rem;
+            border-radius: 10px;
+            width: 80%;
+            margin: 0.5rem auto;
+            transition: all 0.3s ease;
+        }
+
+        .btn-selection:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+		.step-wizard {
+    display: flex;
+    justify-content: space-between;
+    margin: 2rem 0;
+    position: relative;
+    padding: 0 1rem;
+}
+
+.step-wizard-item {
+    flex: 1;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+.step-wizard-item:not(:last-child):after {
+    content: '';
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    width: 100%;
+    height: 3px;
+    background: #e9ecef;
+    z-index: -1;
+}
+
+.step-wizard-item.active:not(:last-child):after {
+    background: #0d6efd;
+}
+
+.step-wizard-circle {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #e9ecef;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.step-wizard-item.active .step-wizard-circle {
+    background-color: #0d6efd;
+    color: white;
+    border-color: #0d6efd;
+}
+
+.step-wizard-label {
+    margin-top: 0.5rem;
+    font-size: 0.85rem;
+    color: #6c757d;
+}
+
+.step-wizard-item.active .step-wizard-label {
+    color: #0d6efd;
+    font-weight: 500;
+}
+
+.business-step {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.business-step.active {
+    display: block;
+    opacity: 1;
+}
+
+.step-title {
+    color: #0d6efd;
+    margin-bottom: 1.5rem;
+    font-weight: 500;
+    text-align: center;
+}
+
+
+        .form-section {
+            display: none;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .form-section.active {
+            display: block;
+            opacity: 1;
+        }
+
+        .form-control {
+            padding: 0.75rem;
+            border-radius: 8px;
+        }
+
+        .form-label {
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+        }
+
+        .buttons-container {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .btn {
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            font-weight: 500;
+        }
+
+        .section-title {
+            color: #0d6efd;
+            font-weight: 600;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .type-selection-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+            padding: 2rem 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="site-content">
+   
+        <div class="loader-mask">
+			<div class="loader">
+			</div>
+		</div>
+		<!-- Preloader end -->
+		<!-- Header start -->
+		<header id="top-header">
+			<div class="container">
+				<div class="let-yoy-page-section-full">
+					<div class="back-btn-page">
+						<a href="javascript:history.go(-1)">
+							<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<mask id="mask0_330_7385" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24">
+									<rect width="24" height="24" fill="white"/>
+								</mask>
+								<g mask="url(#mask0_330_7385)">
+									<path d="M15 18L9 12L15 6" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+								</g>
+							</svg>
+						</a>
+					</div>
+				</div>
+			</div>
+		</header>
+      <br>
+        <div class="row justify-content-center" id="sign-up-screen-content">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-body">
+                        <h2 class="section-title">Registro</h2>
+                        
+                        <!-- Selector de tipo de registro -->
+                        <div class="form-section active" id="type-selection">
+                            <h4 class="text-center mb-4">¿Cómo deseas registrarte?</h4>
+                            <div class="type-selection-container">
+                                <button class="btn btn-primary btn-selection" onclick="selectType('user')">
+                                    Como Usuario
+                                </button>
+                                <button class="btn btn-secondary btn-selection" onclick="selectType('business')">
+                                    Como Negocio
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Formulario de Usuario -->
+                        <div class="form-section" id="user-form">
+                            <h4 class="section-title">Registro de Usuario</h4>
+                            <form id="userRegistrationForm">
+                                <div class="mb-3">
+                                    <label class="form-label">Nombre de Usuario</label>
+                                    <input type="text" class="form-control" name="username" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Email</label>
+                                    <input type="email" class="form-control" name="email" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Contraseña</label>
+                                    <input type="password" class="form-control" name="pass" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Nombre Completo</label>
+                                    <input type="text" class="form-control" name="nombre" required>
+                                </div>
+                                <div class="buttons-container">
+                                    <button type="button" class="btn btn-secondary" onclick="selectType('type-selection')">Volver</button>
+                                    <button type="submit" class="btn btn-primary">Registrar</button>
+                                </div>
+                            </form>
+                        </div>
+
+                        <!-- Formulario de Negocio -->
+                        <!-- Formulario de Negocio -->
+<div class="form-section" id="business-form">
+    <h4 class="section-title">Registro de Negocio</h4>
+    
+    <!-- Timeline mejorado -->
+    <div class="step-wizard mb-4">
+        <div class="step-wizard-item active" data-step="1">
+            <div class="step-wizard-circle">1</div>
+            <div class="step-wizard-label">Datos del negocio</div>
+        </div>
+        <div class="step-wizard-item" data-step="2">
+            <div class="step-wizard-circle">2</div>
+            <div class="step-wizard-label">Información Básica</div>
+        </div>
+        <div class="step-wizard-item" data-step="3">
+            <div class="step-wizard-circle">3</div>
+            <div class="step-wizard-label">Detalles Adicionales</div>
+        </div>
+    </div>
+
+    <form id="businessRegistrationForm">
+        <!-- Paso 1: Información de Usuario -->
+        <div class="business-step active" data-step="1">
+            <h5 class="step-title">Información de Usuario</h5>
+            <div class="mb-3">
+                <label class="form-label">Nombre de Usuario</label>
+                <input type="text" class="form-control" name="username" required>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Email</label>
+                <input type="email" class="form-control" name="email" required>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Contraseña</label>
+                <input type="password" class="form-control" name="pass" required>
+            </div>
+			<div class="mb-3">
+                <label class="form-label">Tu nombre</label>
+                <input type="text" class="form-control" name="nombre" required>
+            </div>
+		</div>
+
+        <!-- Paso 2: Información Básica del Negocio -->
+        <div class="business-step" data-step="2">
+            <h5 class="step-title">Información Básica del Negocio</h5>
+            <div class="mb-3">
+                <label class="form-label">Nombre del Negocio</label>
+                <input type="text" class="form-control" name="name" required>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Descripción</label>
+                <textarea class="form-control" name="description" rows="3" required></textarea>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Categoría</label>
+                <select class="form-control" name="category_id" id="categorySelect" required>
+                    
+                </select>
+           
+                <div class="mb-3">
+                    <label class="form-label">¿Es tienda virtual?</label>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="virtualStore" id="virtualStoreYes" value="yes">
+                        <label class="form-check-label" for="virtualStoreYes">Sí</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="virtualStore" id="virtualStoreNo" value="no" checked>
+                        <label class="form-check-label" for="virtualStoreNo">No</label>
+                    </div>
+                </div>
+           
+            </div>
+        </div>
+
+        <!-- Paso 3: Detalles Adicionales -->
+        <div class="business-step" data-step="3">
+            <h5 class="step-title">Detalles Adicionales</h5>
+            <div class="mb-3" id="addressField">
+                <label  class="form-label">Dirección</label>
+                <input type="text" class="form-control" name="address"  required>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Teléfono</label>
+                <input type="tel" class="form-control" name="phone" required>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">url intagram</label>
+                <input type="url" class="form-control" name="website">
+            </div>
+        </div>
+
+        <!-- Botones de navegación -->
+        <div class="buttons-container">
+			<button type="button" class="btn btn-outline-secondary" onclick="window.location.href='sign-in-screen.html'" id="cancelButton">Cancelar</button>
+            <button type="button" class="btn btn-secondary" id="prevStep" style="display:none">Anterior</button>
+            <button type="button" class="btn btn-primary" id="nextStep">Siguiente</button>
+            <button type="submit" class="btn btn-success" id="submitBusiness" style="display:none">Finalizar Registro</button>
+        </div>
+    </form>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/slick.min.js"></script>
+	<script src="assets/js/bootstrap.bundle.min.js"></script>
+	<script src="assets/js/intlTelInput-jquery.min.js"></script>
+	<script src="assets/js/country-flag.js"></script>
+	<script src="assets/js/custom.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.all.min.js"></script>
+
+	<script src="assets/js/registro.js"></script>
+</body>
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Guruji - Aprendizaje Online y Cursos Educativos</title>
+	<link rel="icon" href="assets/images/favicon/icon.png">
+	<link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="assets/css/all.min.css">
+	<link rel="stylesheet" href="assets/css/slick.css">
+	<link rel="stylesheet" href="assets/css/bootstrap.min.css">
+	<link rel="stylesheet" href="assets/css/style.css">
+	<link rel="stylesheet" href="assets/css/media-query.css">
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+	
+</head>
+<body>
+	<div class="site-content">
+		<!-- Preloader start -->
+		<div class="loader-mask">
+			<div class="loader">
+			</div>
+		</div>
+		<!-- Preloader end -->
+		<!-- Header start -->
+		<header id="top-header">
+			<div class="container">
+				<div class="let-yoy-page-section-full">
+					<div class="back-btn-page">
+						<a href="javascript:history.go(-1)">
+							<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<mask id="mask0_330_7385" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24">
+									<rect width="24" height="24" fill="white"/>
+								</mask>
+								<g mask="url(#mask0_330_7385)">
+									<path d="M15 18L9 12L15 6" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+								</g>
+							</svg>
+						</a>
+					</div>
+				</div>
+			</div>
+		</header>
+		<!-- Header end -->
+		<!-- Sign in screen start -->
+		<section id="sign-in-screen-content">
+			<div class="container">
+				<div class="sign-in-login">
+					<h1 class="login-txt">Inicia Sesión en tu Cuenta</h1>
+				</div>
+				<div class="sign-in-login-form mt-24">
+					<form id="form-login">
+						<div class="form-details-sign-in">
+							<span>
+								<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<mask id="mask0_330_7186" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24">
+										<rect width="24" height="24" fill="white"/>
+									</mask>
+									<g mask="url(#mask0_330_7186)">
+										<path d="M19 5H5C3.89543 5 3 5.89543 3 7V17C3 18.1046 3.89543 19 5 19H19C20.1046 19 21 18.1046 21 17V7C21 5.89543 20.1046 5 19 5Z" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+										<path d="M3 7L12 13L21 7" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+									</g>
+								</svg>
+							</span>
+							<input type="text" id="email" placeholder="email" class="sign-in-custom-input">
+						</div>
+						<div class="form-details-sign-in mt-12">
+							<span>
+								<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<mask id="mask0_330_7136" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24">
+										<rect width="24" height="24" fill="white"/>
+									</mask>
+									<g mask="url(#mask0_330_7136)">
+										<path d="M17 11H7C5.89543 11 5 11.8954 5 13V19C5 20.1046 5.89543 21 7 21H17C18.1046 21 19 20.1046 19 19V13C19 11.8954 18.1046 11 17 11Z" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+										<path d="M12 17C12.5523 17 13 16.5523 13 16C13 15.4477 12.5523 15 12 15C11.4477 15 11 15.4477 11 16C11 16.5523 11.4477 17 12 17Z" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+										<path d="M8 11V7C8 5.93913 8.42143 4.92172 9.17157 4.17157C9.92172 3.42143 10.9391 3 12 3C13.0609 3 14.0783 3.42143 14.8284 4.17157C15.5786 4.92172 16 5.93913 16 7V11" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+									</g>
+								</svg>
+							</span>
+							<input type="password" id="contrasena" placeholder="Contraseña" class="sign-in-custom-input">
+							<i class="fas fa-eye-slash" id="eye"></i>
+						</div>
+					</form>
+				
+				</div>
+				</div>
+				<div class="remember-section">
+					<div class="footer-checkbox-sec">
+						<input class="footer-checkbox-input" id="footer-checkbox" type="checkbox">
+						<label for="footer-checkbox" class="footer-chec-txt">Recuérdame</label>
+					</div>
+					<div class="forget-btn">
+						<a href="forget-password-screen.html">¿Olvidaste tu contraseña?</a>
+					</div>
+				</div>
+				<div id="btnlogin" class="sign-in-btn mt-32 ">
+					<a href="#">Iniciar sesión</a>
+				</div>
+				
+					
+				</div>
+			</div>
+		</section>
+		<!-- Sign in screen end -->
+		<!-- Footer start -->
+		<footer id="let-you-footer">
+			<div class="block-footer">
+				<p>¿No tienes una cuenta? <a href="sign-up-screen.html">Regístrate</a></p>
+			</div>
+		</footer>
+		<!-- Footer end -->
+	</div>
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/slick.min.js"></script>
+	<script src="assets/js/bootstrap.bundle.min.js"></script>
+	<script src="assets/js/custom.js"></script>
+	<script src="assets/js/login.js"></script>
+</body>
+</html>
